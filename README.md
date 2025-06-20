@@ -44,7 +44,7 @@ To enhance transferability for cross-scenario urban flood modeling and forecasti
 To use the TL-DNO model, execute the following steps:
 1. **Download traning, validation, and test data. Put in the corresponding folder.**
    
-2. **Please use DNO/TIFF2PT to convert TIFF files into PT files, thereby streamlining model training and data loading processes.**
+2. **Please use TL-DNO/TIFF2PT to convert TIFF files into PT files, thereby streamlining model training and data loading processes.**
 
 3. **Please change the corresponding path to your path.**
 
