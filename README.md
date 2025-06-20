@@ -19,7 +19,7 @@ UrbanFloodCast_Dataset
   - Zero-shot downscaling
     - Valid
     - Test
-- BerlinII
+- Berlin II
   - Input_BerlinII
   - EulerII
   - EulerIII
