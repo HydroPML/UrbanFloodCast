@@ -161,8 +161,9 @@ scheduler_gamma = args.gamma # for step scheduler
 
 initial_step = 1 if args.strategy == "markov" else T_in
 
-
-root = 'Path/to/Save/DNO' 
+root = args.results_path + f"/{'_'.join(str(datetime.datetime.now()).split())}"
+if args.suffix:
+    root += "_" + args.suffix
 path_model = os.path.join(root, 'model.pt')
 writer = SummaryWriter(root)
 
@@ -454,3 +455,4 @@ with open(os.path.join(root, txt), 'w') as f:
 writer.flush()
 
 writer.close()
+
