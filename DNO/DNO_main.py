@@ -307,9 +307,6 @@ for ep in range(epochs):
             loss = lploss(im.reshape(len(im), -1, num_channels_y), yy.reshape(len(yy), -1, num_channels_y))
 
         train_l2 += loss.item()
-        if swe:
-            train_vort_l2 += lploss(im[..., VORT_IND].reshape(len(im), -1, 1), yy[..., VORT_IND].reshape(len(yy), -1, 1)).item()
-            train_pres_l2 += lploss(im[..., PRES_IND].reshape(len(im), -1, 1), yy[..., PRES_IND].reshape(len(yy), -1, 1)).item()
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
@@ -442,9 +439,6 @@ summary = f"Args: {str(args)}" \
           f"\nSuper T: {T_super}" \
           f"\nBest Valid: {best_valid / nvalid}" \
           f"\nEpochs trained: {ep}"
-if swe:
-    summary += f"\nVorticity Test: {test_vort_l2 / ntest}" \
-               f"\nPressure Test: {test_pres_l2 / ntest}"
 txt = "results"
 if args.txt_suffix:
     txt += f"_{args.txt_suffix}"
@@ -455,5 +449,6 @@ with open(os.path.join(root, txt), 'w') as f:
 writer.flush()
 
 writer.close()
+
 
 
