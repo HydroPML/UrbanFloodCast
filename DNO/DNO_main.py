@@ -164,6 +164,7 @@ initial_step = 1 if args.strategy == "markov" else T_in
 
 root = 'Path/to/Save/DNO' 
 path_model = os.path.join(root, 'model.pt')
+writer = SummaryWriter(root)
 
 ################################################################
 # Model init
@@ -451,4 +452,5 @@ txt += ".txt"
 with open(os.path.join(root, txt), 'w') as f:
     f.write(summary)
 writer.flush()
+
 writer.close()
