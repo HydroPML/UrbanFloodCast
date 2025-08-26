@@ -193,8 +193,8 @@ full_data = None # for superres
 # SR dataset
 dem_tif_path = 'Path/to/moa_bottom.tif'
 man_path = 'Path/to/moa_rough.tif'
-Path_train = 'Path/to/Valid_dataset'
-Path_valid = 'Path/to/Test_dataset'
+Path_train = 'Path/to/Train_dataset'
+Path_valid = 'Path/to/Valid_dataset'
 Path_test = 'Path/to/Test_dataset'
 
 
@@ -455,4 +455,5 @@ with open(os.path.join(root, txt), 'w') as f:
 writer.flush()
 
 writer.close()
+
 
