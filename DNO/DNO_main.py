@@ -353,9 +353,6 @@ num_eval = len(eval_times)
 eval_times = torch.tensor(eval_times).mean().item()
 model.eval()
 # test
-##FNO
-# model.load_state_dict(torch.load(path_model))
-## Other models
 checkpoint = torch.load(path_model)
 state_dict = checkpoint['state_dict']
 model.load_state_dict(state_dict)
@@ -441,6 +438,7 @@ with open(os.path.join(root, txt), 'w') as f:
 writer.flush()
 
 writer.close()
+
 
 
 
