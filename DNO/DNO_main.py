@@ -216,14 +216,6 @@ test_loader = torch.utils.data.DataLoader(test_data, batch_size=batch_size, shuf
 ################################################################
 # training and evaluation
 ################################################################
-pre_path = 'Path/to/Pre_trained/model.pt'
-checkpoint = torch.load(pre_path)
-state_dict = checkpoint['state_dict']
-model.load_state_dict(state_dict)
-print("Load from checkpoint")
-# for name, layer in model.named_modules():
-#     print(f"Layer Name: {name}, Layer Object: {layer}")
-
 complex_ct = sum(par.numel() * (1 + par.is_complex()) for par in model.parameters())
 real_ct = sum(par.numel() for par in model.parameters())
 if args.verbose:
@@ -449,6 +441,7 @@ with open(os.path.join(root, txt), 'w') as f:
 writer.flush()
 
 writer.close()
+
 
 
 
